@@ -7,7 +7,7 @@ import os
 
 DEFAULTS = {
 	"token": "Insert Token Here",
-	"command_prefix": "?",
+	"command_prefix": "!",
 	"questions": [
 		{
 			"question": "What is your server ID?",
