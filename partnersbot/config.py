@@ -19,7 +19,8 @@ DEFAULTS = {
 			"embed_title": "Server Name"
 		}
 	],
-	"output": 0
+	"output": 0,
+	"dm_only": False
 }
 
 def initConfig():

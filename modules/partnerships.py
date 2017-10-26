@@ -24,6 +24,9 @@ class Partnerships:
 	@commands.cooldown(1, 60*10, type=BucketType.user)
 	async def apply(self, ctx):
 		"""Start the interactive partner application prompt."""
+		if self.bot.config.get("dm_only"):
+			if not isinstance(ctx.message.channel, discord.DMChannel):
+				return
 		questions = self.questions
 		first = True
 		def check(m):
