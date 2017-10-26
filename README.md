@@ -17,6 +17,11 @@ Welcome to the Partnerships Bot FAQ!
 5) Now you can start a bot with `python3.6 bot.py`
 
 ##### Please notice that on windows the commands may be different, you can join our support server if you need help
+
+
+## Terms
+* You may not remove the credit in the bot
+* You may not claim this bot as your own
  
 Create an application on the discord bot dev page!
 https://discordapp.com/developers/applications/me/create
