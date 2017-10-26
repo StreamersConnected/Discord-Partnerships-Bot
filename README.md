@@ -1,5 +1,4 @@
 <div align="center">
-        <p> <img src="https://i.imgur.com/tDy4yb4.png"/> </p>
         <p><i><b>Discord Partnerships Bot</b></i></p>
 	<p> 
 		<a href="https://discord.gg/hYtBNYM"><img src="https://discordapp.com/api/guilds/371635725671596033/embed.png" alt="" /></a>
