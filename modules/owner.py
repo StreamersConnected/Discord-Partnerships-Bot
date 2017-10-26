@@ -66,6 +66,9 @@ class Owner:
 		embed.add_field(name="Discord.py version", value=discord.__version__)
 		embed.add_field(name="Author", value="[JustMaffie](https://github.com/JustMaffie)")
 		embed.add_field(name="Bot link", value="[github.com/JustMaffie/Discord-Partnerships-Bot](https://github.com/JustMaffie/Discord-Partnerships-Bot)")
+		if self.bot.owner:
+			owner = self.bot.owner.owner
+			embed.add_field(name="Instance Owned By", value=f"{owner.name}#{owner.discriminator}")
 		embed.add_field(name="About this bot", value="""This bot is an instance of JustMaffie's Partnerships Bot, an open source discord bot to take some load off your shoulders.""")
 		return await ctx.send(embed=embed)
 

@@ -3,6 +3,7 @@ import discord
 class Events:
 	def __init__(self, bot):
 		self.bot = bot
+		self.bot.owner = None
 
 	async def on_ready(self):
 		bot = self.bot
@@ -13,6 +14,7 @@ class Events:
 		info = ["\n", str(self.bot.user), f"Discord.py version: {discord.__version__}", f'Shards: {self.bot.shard_count}', f'Guilds: {len(self.bot.guilds)}',
 			f'Users: {len(set([m for m in self.bot.get_all_members()]))}', f'{len(self.bot.cogs)} modules with {len(self.bot.commands)} commands']
 		self.bot.logger.info("\n".join(info))
+		self.bot.owner = await self.bot.application_info()
 
 def setup(bot):
 	cog = Events(bot)

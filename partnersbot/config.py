@@ -12,9 +12,12 @@ DEFAULTS = {
 		{
 			"question": "What is your server ID?",
 			"embed_title": "Server ID"
+		},{
+			"question": "What is your server name?",
+			"embed_title": "Server Name"
 		}
 	],
-	"output": 0000000000
+	"output": 0
 }
 
 def initConfig():
