@@ -14,7 +14,7 @@ DEFAULTS = {
 			"embed_title": "Server ID"
 		}
 	],
-	"output": "Your channel or user id here"
+	"output": 0000000000
 }
 
 def initConfig():

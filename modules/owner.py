@@ -7,6 +7,9 @@ from discord.ext import commands
 import datetime
 from collections import Counter
 import io
+import textwrap
+import traceback
+from contextlib import redirect_stdout
 
 class Owner:
 
@@ -26,12 +29,12 @@ class Owner:
 	@commands.is_owner()
 	@commands.command()
 	async def reload(self, ctx, module):
-		print(module)
 		try:
 			self.bot.unload_extension(module)
 			self.bot.load_extension(module)
 		except Exception as e:
 			await ctx.send(f"An error occurred while reloading {module}\n``{e}``")
+			self.bot.logger.exception(traceback.format_exc)
 		else:
 			await ctx.send(f"Module {module} reloaded successfully")
 
@@ -41,6 +44,7 @@ class Owner:
 		try:
 			self.bot.load_extension(module)
 		except Exception as e:
+			self.bot.logger.exception(traceback.format_exc)
 			return await ctx.send(f"An error occurred while loading {module}\n{e}")
 		return await ctx.send(f"Module {module} loaded successfully")
 
@@ -50,6 +54,7 @@ class Owner:
 		try:
 			self.bot.unload_extension(module)
 		except Exception as e:
+			self.bot.logger.exception(traceback.format_exc)
 			return await ctx.send(f"An error occurred while loading {module}\n{e}")
 		return await ctx.send(f"Module {module} loaded successfully")
 
@@ -61,7 +66,7 @@ class Owner:
 		embed.add_field(name="Discord.py version", value=discord.__version__)
 		embed.add_field(name="Author", value="[JustMaffie](https://github.com/JustMaffie)")
 		embed.add_field(name="Bot link", value="[github.com/JustMaffie/Discord-Partnerships-Bot](https://github.com/JustMaffie/Discord-Partnerships-Bot)")
-
+		embed.add_field(name="About this bot", value="""This bot is an instance of JustMaffie's Partnerships Bot, an open source discord bot to take some load off your shoulders.""")
 		return await ctx.send(embed=embed)
 
 	# Thanks danny
