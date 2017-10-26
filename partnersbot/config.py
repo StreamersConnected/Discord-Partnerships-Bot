@@ -2,6 +2,8 @@
 Read LICENSE file
 """
 
+# I'll rewrite this file later.
+
 from .storage import JSONDriver
 import os
 
