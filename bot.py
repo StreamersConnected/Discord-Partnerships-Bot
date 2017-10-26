@@ -1,6 +1,6 @@
 import logging, logging.handlers, sys
 # Logging code is messy as hell, should be cleaned up in the near future
-FORMAT = f'[%(levelname)s] [%(name)s] [%(asctime)s]: %(message)s'
+FORMAT = '[%(levelname)s] [%(name)s] [%(asctime)s]: %(message)s'
 logger = logging.getLogger("PartnersBot")
 logger.setLevel(logging.INFO)
 format = logging.Formatter(FORMAT, datefmt="%d/%m/%Y %H:%M")
