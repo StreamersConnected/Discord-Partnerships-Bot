@@ -38,6 +38,9 @@ class Partnerships:
 		def check(m):
 			return m.author.id == ctx.message.author.id and m.channel.id == ctx.message.channel.id
 		embed = discord.Embed()
+		embed.color = discord.Color.blue()
+		embed.add_field(name="User info:", value=f"**User ID: **{ctx.message.author.id}\n**Username: **{ctx.message.author.name}")
+		embed.set_thumbnail(ctx.message.author.avatar_url)
 		for question in questions:
 			if first:
 				await ctx.send(f"{self.bot.config.get('welcome_message')} {question['question']}")
@@ -60,8 +63,6 @@ class Partnerships:
 				except:
 					self.bot.logger.exception(traceback.format_exc())
 					return await ctx.send("Something went wrong... Please try again later.")	
-		embed.color = discord.Color.blue()
-		embed.add_field(name="User info:", value=f"**User ID: **{ctx.message.author.id}\n**Username: **{ctx.message.author.name}")
 		await self.output.send(embed=embed)
 		await ctx.send("Thanks for your application, it will be reviewed asap.")
 
