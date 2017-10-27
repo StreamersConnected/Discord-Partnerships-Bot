@@ -6,6 +6,10 @@
 	</p>
 </div> 
 
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/4Y91YE1GgY8MZ99S8qLcXnVK/JustMaffie/Discord-Partnerships-Bot'>
+  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/4Y91YE1GgY8MZ99S8qLcXnVK/JustMaffie/Discord-Partnerships-Bot.svg' />
+</a>
+
 # Partnerships Bot
 Welcome to the Partnerships Bot FAQ!
  
@@ -35,7 +39,3 @@ https://discordapp.com/developers/applications/me/create
 Just invite the bot to your server through:
 https://discordapp.com/oauth2/authorize?client_id=12345678&scope=bot&permissions=66186303
 (Add the client ID where "12345678" is)
-
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/4Y91YE1GgY8MZ99S8qLcXnVK/JustMaffie/Discord-Partnerships-Bot'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/4Y91YE1GgY8MZ99S8qLcXnVK/JustMaffie/Discord-Partnerships-Bot.svg' />
-</a>
