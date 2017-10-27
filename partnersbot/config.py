@@ -20,7 +20,8 @@ DEFAULTS = {
 		}
 	],
 	"output": 0,
-	"dm_only": False
+	"dm_only": False,
+	"apply_command_name": "apply"
 }
 
 def initConfig():

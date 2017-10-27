@@ -4,6 +4,12 @@ from discord.ext import commands
 from discord.ext.commands.cooldowns import BucketType
 import random
 import traceback
+import json
+
+def get_applycmdname():
+	with open("data/config.json") as f:
+		ff = json.load(f)
+		return ff.get("apply_command_name", "apply")
 
 class Partnerships:
 	def __init__(self, bot):
@@ -20,7 +26,7 @@ class Partnerships:
 		output = self.bot.get_channel(id=id)
 		return output
 
-	@commands.command()
+	@commands.command(name=get_applycmdname())
 	@commands.cooldown(1, 60*10, type=BucketType.user)
 	async def apply(self, ctx):
 		"""Start the interactive partner application prompt."""
