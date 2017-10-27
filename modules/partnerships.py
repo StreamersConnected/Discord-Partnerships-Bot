@@ -40,7 +40,7 @@ class Partnerships:
 		embed = discord.Embed()
 		embed.color = discord.Color.blue()
 		embed.add_field(name="User info:", value=f"**User ID: **{ctx.message.author.id}\n**Username: **{ctx.message.author.name}")
-		embed.set_thumbnail(ctx.message.author.avatar_url)
+		embed.set_thumbnail(url=ctx.message.author.avatar_url)
 		for question in questions:
 			if first:
 				await ctx.send(f"{self.bot.config.get('welcome_message')} {question['question']}")
