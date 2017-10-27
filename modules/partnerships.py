@@ -40,7 +40,7 @@ class Partnerships:
 		embed = discord.Embed()
 		for question in questions:
 			if first:
-				await ctx.send(f"Hello, welcome to this partnerships prompt. {question['question']}")
+				await ctx.send(f"{self.bot.config.get('welcome_message')} {question['question']}")
 				try:
 					msg = await self.bot.wait_for("message", check=check, timeout=self.timeout)
 					embed.add_field(name=question['embed_title'], value=msg.content)

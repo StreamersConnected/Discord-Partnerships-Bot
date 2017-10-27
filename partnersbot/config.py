@@ -21,7 +21,8 @@ DEFAULTS = {
 	],
 	"output": 0,
 	"dm_only": False,
-	"apply_command_name": "apply"
+	"apply_command_name": "apply",
+	"welcome_message": "Hello, welcome to this partnerships prompt."
 }
 
 def initConfig():
