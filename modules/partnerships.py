@@ -39,11 +39,11 @@ class Partnerships:
 			return m.author.id == ctx.message.author.id and m.channel.id == ctx.message.channel.id
 		embed = discord.Embed()
 		embed.color = discord.Color.blue()
-		embed.add_field(name="User info:", value=f"**User ID: **{ctx.message.author.id}\n**Username: **{ctx.message.author.name}")
+		embed.add_field(name="User info:", value="**User ID: **{}\n**Username: **{}".format(ctx.message.author.id, ctx.message.author.name))
 		embed.set_thumbnail(url=ctx.message.author.avatar_url)
 		for question in questions:
 			if first:
-				await ctx.send(f"{self.bot.config.get('welcome_message')} {question['question']}")
+				await ctx.send(self.bot.config.get('welcome_message')+question['question'])
 				try:
 					msg = await self.bot.wait_for("message", check=check, timeout=self.timeout)
 					embed.add_field(name=question['embed_title'], value=msg.content)

@@ -6,6 +6,7 @@ from discord.ext import commands
 import discord
 from .config import initConfig
 import os
+import redis
 
 class CustomContext(commands.Context):
 	async def send_help(self):
@@ -23,20 +24,24 @@ class Bot(commands.AutoShardedBot):
 		self.logger = logging.getLogger("PartnersBot")
 		super(Bot, self).__init__(command_prefix=self.config.get('command_prefix'), *args, **kwargs)
 		self.description = "An instance of JustMaffie's Partnerships Discord Bot"
+		
+		# Configure redis
+		self.pool = redis.ConnectionPool(host=self.config.get("redis").get("host"), port=self.config.get("redis").get("port"), db=0)
+		self.redis = redis.Redis(connection_pool=self.pool)
 
 	async def get_context(self, message, *, cls=CustomContext):
 		return await super().get_context(message, cls=cls)
 
 	def load_extension(self, name):
-		self.logger.info(f'LOADING EXTENSION {name}')
+		self.logger.info('LOADING EXTENSION {name}'.format(name=name))
 		if not name.startswith("modules."):
-			name = f"modules.{name}"
+			name = "modules.{}".format(name)
 		return super().load_extension(name)
 
 	def unload_extension(self, name):
-		self.logger.info(f'UNLOADING EXTENSION {name}')
+		self.logger.info('UNLOADING EXTENSION {name}'.format(name=name))
 		if not name.startswith("modules."):
-			name = f"modules.{name}"
+			name = "modules.{}".format(name)
 		return super().unload_extension(name)
 
 	def load_all_extensions(self):
@@ -45,7 +50,7 @@ class Bot(commands.AutoShardedBot):
 		for module in _modules:
 			if not module in ['__pycache__', '__init__']:
 				if not module.startswith("_"):
-					modules.append(f"modules.{module}")
+					modules.append("modules.{}".format(module))
 
 		for module in modules:
 			self.load_extension(module)
@@ -64,8 +69,8 @@ def make_bot(*args, **kwargs):
 		elif isinstance(error, commands.BadArgument):
 			await ctx.send_help()
 		elif isinstance(error, commands.CommandInvokeError):
-			message = f"Error in command '{ctx.command.qualified_name}'.\n{error}"
-			await ctx.send(f"```{message}```")
+			message = "Error in command '{}'.\n{}".format(ctx.command.qualified_name, error)
+			await ctx.send("```{message}```".format(message=message))
 		elif isinstance(error, commands.CommandNotFound):
 			pass
 		elif isinstance(error, commands.CheckFailure):

@@ -22,7 +22,11 @@ DEFAULTS = {
 	"output": 0,
 	"dm_only": False,
 	"apply_command_name": "apply",
-	"welcome_message": "Hello, welcome to this partnerships prompt."
+	"welcome_message": "Hello, welcome to this partnerships prompt.",
+	"redis": {
+			"host": "localhost",
+			"port": 6379
+	}
 }
 
 def initConfig():
