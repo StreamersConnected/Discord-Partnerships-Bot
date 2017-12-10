@@ -23,8 +23,8 @@ class Owner:
 
 	def get_syntax_error(self, e):
 		if e.text is None:
-			return f'```py\n{e.__class__.__name__}: {e}\n```'
-		return f'```py\n{e.text}{"^":>{e.offset}}\n{e.__class__.__name__}: {e}```'
+			return '```py\n{e.__class__.__name__}: {e}\n```'.format(e=e)
+		return '```py\n{e.text}{"^":>{e.offset}}\n{e.__class__.__name__}: {e}```'.format(e=e)
 
 	@commands.is_owner()
 	@commands.command()
@@ -33,10 +33,10 @@ class Owner:
 			self.bot.unload_extension(module)
 			self.bot.load_extension(module)
 		except Exception as e:
-			await ctx.send(f"An error occurred while reloading {module}\n``{e}``")
+			await ctx.send("An error occurred while reloading {module}\n``{e}``".format(module=module,e=e))
 			self.bot.logger.exception(traceback.format_exc)
 		else:
-			await ctx.send(f"Module {module} reloaded successfully")
+			await ctx.send("Module {module} reloaded successfully".format(module=module))
 
 	@commands.is_owner()
 	@commands.command()
@@ -45,8 +45,8 @@ class Owner:
 			self.bot.load_extension(module)
 		except Exception as e:
 			self.bot.logger.exception(traceback.format_exc)
-			return await ctx.send(f"An error occurred while loading {module}\n{e}")
-		return await ctx.send(f"Module {module} loaded successfully")
+			return await ctx.send("An error occurred while loading {module}\n{e}".format(module=module,e=e))
+		return await ctx.send("Module {module} loaded successfully".format(module=module))
 
 	@commands.is_owner()
 	@commands.command()
@@ -55,8 +55,8 @@ class Owner:
 			self.bot.unload_extension(module)
 		except Exception as e:
 			self.bot.logger.exception(traceback.format_exc)
-			return await ctx.send(f"An error occurred while loading {module}\n{e}")
-		return await ctx.send(f"Module {module} loaded successfully")
+			return await ctx.send("An error occurred while loading {module}\n{e}".format(module=module,e=e))
+		return await ctx.send("Module {module} loaded successfully".format(module=module))
 
 	@commands.is_owner()
 	@commands.command()
@@ -68,7 +68,7 @@ class Owner:
 		embed.add_field(name="Bot link", value="[github.com/JustMaffie/Discord-Partnerships-Bot](https://github.com/JustMaffie/Discord-Partnerships-Bot)")
 		if self.bot.owner:
 			owner = self.bot.owner.owner
-			embed.add_field(name="Instance Owned By", value=f"{owner.name}#{owner.discriminator}")
+			embed.add_field(name="Instance Owned By", value="{}#{}".format(owner.name, owner.discriminator))
 		embed.add_field(name="About this bot", value="""This bot is an instance of JustMaffie's Partnerships Bot, an open source discord bot to take some load off your shoulders.""")
 		return await ctx.send(embed=embed)
 
@@ -90,12 +90,12 @@ class Owner:
 		body = self.cleanup_code(body)
 		stdout = io.StringIO()
 
-		to_compile = f'async def func():\n{textwrap.indent(body, "  ")}'
+		to_compile = 'async def func():\n{}'.format(textwrap.indent(body, "  "))
 
 		try:
 			exec(to_compile, env)
 		except Exception as e:
-			return await ctx.send(f'```py\n{e.__class__.__name__}: {e}\n```')
+			return await ctx.send('```py\n{e.__class__.__name__}: {e}\n```').format(e=e)
 
 		func = env['func']
 		try:
@@ -103,7 +103,7 @@ class Owner:
 				ret = await func()
 		except Exception as e:
 			value = stdout.getvalue()
-			await ctx.send(f'```py\n{value}{traceback.format_exc()}\n```')
+			await ctx.send('```py\n{}{}\n```').format(value, traceback.format_exc())
 		else:
 			value = stdout.getvalue()
 			try:
@@ -113,10 +113,10 @@ class Owner:
 
 			if ret is None:
 				if value:
-					await ctx.send(f'```py\n{value}\n```')
+					await ctx.send('```py\n{}\n```'.format(value))
 			else:
 				self._last_result = ret
-				await ctx.send(f'```py\n{value}{ret}\n```')
+				await ctx.send('```py\n{}{}\n```'.format(value,ret))
 
 
 def setup(bot):

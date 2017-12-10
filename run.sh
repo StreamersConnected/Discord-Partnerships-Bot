@@ -1,1 +1,1 @@
-python3.6 bot.py
+python3.5 bot.py
