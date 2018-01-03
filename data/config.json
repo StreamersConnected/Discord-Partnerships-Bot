@@ -1,5 +1,5 @@
 {
-    "token": "MzYxNTcyMjY0MTA3NTczMjU4.DS32TA.cwyq5ZYljpQOFR7SZXPfyBuVvAo",
+    "token": "MzYxNTcyMjY0MTA3NTczMjU4.DS39GA.IgxexysZSsWUxvvt3Wk_5En3V9A",
     "command_prefix": "!",
     "questions": [
         {
@@ -15,5 +15,8 @@
     "dm_only": true,
     "apply_command_name": "apply",
     "welcome_message": "Hello, welcome to this partnerships prompt.",
+    "redis": {
+        "host": "localhost",
+        "port": 6379
     }
 }
