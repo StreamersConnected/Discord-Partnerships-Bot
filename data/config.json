@@ -9,6 +9,14 @@
         {
             "question": "What is your server name?",
             "embed_title": "Server Name"
+        },
+        {
+            "question": "Give us a description of your server. (**300 Characters +**)",
+            "embed_title": "Server Description"
+        },
+        {
+            "question": "Give us a non-expirable invite link. (**Cannot be Discord.io/Discord.me**)",
+            "embed_title": "Server Invite"
         }
     ],
     "output": 397977130262200331,
