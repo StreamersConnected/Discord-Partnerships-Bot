@@ -1,0 +1,20 @@
+[INFO] [PartnersBot] [02/01/2018 23:08]: LOADING EXTENSION modules.events
+[INFO] [PartnersBot] [02/01/2018 23:08]: LOADING EXTENSION modules.owner
+[INFO] [PartnersBot] [02/01/2018 23:08]: LOADING EXTENSION modules.partnerships
+[INFO] [PartnersBot] [02/01/2018 23:08]: LOADING EXTENSION modules.whitelist
+[INFO] [PartnersBot] [02/01/2018 23:08]: UNLOADING EXTENSION modules.events
+[INFO] [PartnersBot] [02/01/2018 23:08]: UNLOADING EXTENSION modules.owner
+[INFO] [PartnersBot] [02/01/2018 23:08]: UNLOADING EXTENSION modules.partnerships
+[INFO] [PartnersBot] [02/01/2018 23:08]: UNLOADING EXTENSION modules.whitelist
+[INFO] [PartnersBot] [02/01/2018 23:09]: LOADING EXTENSION modules.events
+[INFO] [PartnersBot] [02/01/2018 23:09]: LOADING EXTENSION modules.owner
+[INFO] [PartnersBot] [02/01/2018 23:09]: LOADING EXTENSION modules.partnerships
+[INFO] [PartnersBot] [02/01/2018 23:09]: LOADING EXTENSION modules.whitelist
+[INFO] [PartnersBot] [02/01/2018 23:09]: 
+
+SC (Community Partnerships)#1231
+Discord.py version: 1.0.0a
+Shards: 1
+Guilds: 0
+Users: 0
+4 modules with 8 commands

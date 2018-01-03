@@ -1,0 +1,22 @@
+{
+    "token": "MzYxNTcyMjY0MTA3NTczMjU4.DS32TA.cwyq5ZYljpQOFR7SZXPfyBuVvAo",
+    "command_prefix": "!",
+    "questions": [
+        {
+            "question": "What is your server ID?",
+            "embed_title": "Server ID"
+        },
+        {
+            "question": "What is your server name?",
+            "embed_title": "Server Name"
+        }
+    ],
+    "output": 397977130262200331,
+    "dm_only": true,
+    "apply_command_name": "apply",
+    "welcome_message": "Hello, welcome to this partnerships prompt.",
+    "redis": {
+        "host": "localhost",
+        "port": 6379
+    }
+}
